@@ -75,18 +75,27 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className={`space-y-8 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
               <div className="space-y-6">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-sm font-medium">
-                  <Zap className="h-4 w-4 mr-2" />
+                <div 
+                  className="inline-flex items-center px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-sm font-medium animate-fade-in hover:bg-secondary/20 hover:border-secondary/40 hover:scale-105 transition-all duration-300 cursor-pointer group"
+                  style={{ animationDelay: '0.2s' }}
+                >
+                  <Zap className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform duration-300" />
                   Leading AI Training Platform
                 </div>
-                <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                  <span className="text-gradient-hero">Transform</span>
+                <h1 
+                  className="text-5xl lg:text-7xl font-bold leading-tight animate-fade-in"
+                  style={{ animationDelay: '0.4s' }}
+                >
+                  <span className="text-gradient-hero inline-block hover:scale-105 transition-transform duration-500 cursor-default">Transform</span>
                   <br />
-                  Your Team with
+                  <span className="inline-block hover:text-secondary transition-colors duration-300 cursor-default">Your Team with</span>
                   <br />
-                  <span className="text-gradient">AI Mastery</span>
+                  <span className="text-gradient inline-block hover:scale-105 transition-transform duration-500 cursor-default">AI Mastery</span>
                 </h1>
-                <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
+                <p 
+                  className="text-xl text-muted-foreground max-w-lg leading-relaxed animate-fade-in hover:text-foreground transition-colors duration-300"
+                  style={{ animationDelay: '0.6s' }}
+                >
                   Empower your organization with cutting-edge AI training programs designed for enterprise teams and individual professionals seeking to lead in the AI revolution.
                 </p>
               </div>
