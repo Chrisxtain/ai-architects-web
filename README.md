@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Welcome to this AI Training website project
 
 ## Project info
 
