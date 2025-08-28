@@ -2,41 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* AI Training Company Design System - Professional & Cinematic */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors - Deep Navy & Electric Blue Theme */
+    --background: 220 25% 8%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 20% 12%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Primary - Deep Navy */
+    --primary: 220 25% 8%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Electric Blue */
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 220 25% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent - Neon Blue */
+    --accent: 200 100% 70%;
+    --accent-foreground: 220 25% 8%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 20% 65%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* AI Theme Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220, 25%, 8%) 0%, hsl(217, 91%, 60%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(200, 100%, 70%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220, 25%, 8%) 0%, hsl(217, 91%, 60%) 50%, hsl(200, 100%, 70%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220, 20%, 12%) 0%, hsl(220, 15%, 20%) 100%);
+    
+    /* Glow Effects */
+    --glow-primary: 0 0 40px hsl(217, 91%, 60%, 0.3);
+    --glow-accent: 0 0 60px hsl(200, 100%, 70%, 0.4);
+    --glow-subtle: 0 0 20px hsl(217, 91%, 60%, 0.1);
+
+    /* Shadows */
+    --shadow-lg: 0 25px 50px -12px hsl(220, 25%, 8%, 0.8);
+    --shadow-card: 0 10px 30px -10px hsl(220, 25%, 8%, 0.5);
+    --shadow-glow: 0 0 40px hsl(217, 91%, 60%, 0.2);
+
+    /* Animation Variables */
+    --animation-duration: 0.6s;
+    --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +126,130 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+
+  .font-mono {
+    font-family: 'IBM Plex Sans', monospace;
+  }
+}
+
+@layer components {
+  /* Hero Button Variants */
+  .btn-hero {
+    @apply relative px-8 py-4 bg-gradient-to-r from-secondary to-accent text-primary-foreground font-semibold rounded-xl;
+    @apply hover:shadow-[var(--shadow-glow)] transition-all duration-[var(--animation-duration)] ease-[var(--animation-easing)];
+    @apply before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-r before:from-accent before:to-secondary;
+    @apply before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-[var(--animation-duration)];
+    @apply transform hover:scale-105 hover:-translate-y-1;
+  }
+
+  .btn-ghost {
+    @apply relative px-6 py-3 border border-secondary/30 text-foreground font-medium rounded-xl;
+    @apply hover:border-secondary hover:bg-secondary/10 hover:shadow-[var(--glow-subtle)];
+    @apply transition-all duration-[var(--animation-duration)] ease-[var(--animation-easing)];
+    @apply transform hover:scale-105;
+  }
+
+  /* Card Components */
+  .ai-card {
+    @apply relative p-8 bg-gradient-to-br from-card to-card/80 rounded-2xl;
+    @apply border border-border/50 backdrop-blur-sm;
+    @apply shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-glow)];
+    @apply transition-all duration-[var(--animation-duration)] ease-[var(--animation-easing)];
+    @apply transform hover:scale-[1.02] hover:-translate-y-1;
+  }
+
+  .ai-card::before {
+    @apply absolute inset-0 rounded-2xl bg-gradient-to-br from-secondary/5 to-accent/5;
+    @apply opacity-0 hover:opacity-100 transition-opacity duration-[var(--animation-duration)];
+    content: '';
+  }
+
+  /* Text Gradients */
+  .text-gradient {
+    @apply bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent;
+  }
+
+  .text-gradient-hero {
+    @apply bg-gradient-to-r from-foreground via-secondary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Glow Effects */
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  /* Animation Classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s var(--animation-easing) forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s var(--animation-easing) forwards;
+  }
+}
+
+@layer utilities {
+  .container-ai {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+
+  .hero-padding {
+    @apply pt-32 pb-20 lg:pt-40 lg:pb-32;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
