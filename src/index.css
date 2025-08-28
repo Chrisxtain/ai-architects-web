@@ -144,31 +144,41 @@
   /* Hero Button Variants */
   .btn-hero {
     @apply relative px-8 py-4 bg-gradient-to-r from-secondary to-accent text-primary-foreground font-semibold rounded-xl;
-    @apply hover:shadow-[var(--shadow-glow)] transition-all duration-[var(--animation-duration)] ease-[var(--animation-easing)];
+    @apply transition-all duration-300 ease-out transform hover:scale-105 hover:-translate-y-1;
     @apply before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-r before:from-accent before:to-secondary;
-    @apply before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-[var(--animation-duration)];
-    @apply transform hover:scale-105 hover:-translate-y-1;
+    @apply before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300;
+    box-shadow: 0 0 40px hsl(217, 91%, 60%, 0.2);
+  }
+
+  .btn-hero:hover {
+    box-shadow: var(--shadow-glow);
   }
 
   .btn-ghost {
     @apply relative px-6 py-3 border border-secondary/30 text-foreground font-medium rounded-xl;
-    @apply hover:border-secondary hover:bg-secondary/10 hover:shadow-[var(--glow-subtle)];
-    @apply transition-all duration-[var(--animation-duration)] ease-[var(--animation-easing)];
-    @apply transform hover:scale-105;
+    @apply transition-all duration-300 ease-out transform hover:scale-105;
+    @apply hover:border-secondary hover:bg-secondary/10;
+  }
+
+  .btn-ghost:hover {
+    box-shadow: var(--glow-subtle);
   }
 
   /* Card Components */
   .ai-card {
     @apply relative p-8 bg-gradient-to-br from-card to-card/80 rounded-2xl;
     @apply border border-border/50 backdrop-blur-sm;
-    @apply shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-glow)];
-    @apply transition-all duration-[var(--animation-duration)] ease-[var(--animation-easing)];
-    @apply transform hover:scale-[1.02] hover:-translate-y-1;
+    @apply transition-all duration-300 ease-out transform hover:scale-[1.02] hover:-translate-y-1;
+    box-shadow: var(--shadow-card);
+  }
+
+  .ai-card:hover {
+    box-shadow: var(--shadow-glow);
   }
 
   .ai-card::before {
     @apply absolute inset-0 rounded-2xl bg-gradient-to-br from-secondary/5 to-accent/5;
-    @apply opacity-0 hover:opacity-100 transition-opacity duration-[var(--animation-duration)];
+    @apply opacity-0 hover:opacity-100 transition-opacity duration-300;
     content: '';
   }
 
