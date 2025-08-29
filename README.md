@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/e385ba11-d070-4c8c-978e-60fe4872d592
+**URL**: https://aiwebsiteproject.netlify.app/
 
 # 🌐 AI Training Company Website  
 
