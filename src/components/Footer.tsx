@@ -8,13 +8,13 @@ const Footer = () => {
     company: [
       { name: 'About Us', href: '/about' },
       { name: 'Services', href: '/services' },
-      { name: 'Careers', href: '/careers' },
+      { name: 'Careers', href: '/careers', hiring: true },
       { name: 'Contact', href: '/contact' },
     ],
     resources: [
       { name: 'Blog', href: '/blog' },
-      { name: 'Case Studies', href: '/blog' },
-      { name: 'Documentation', href: '/blog' },
+      { name: 'Case Studies', href: '/blog', comingSoon: true },
+      { name: 'Documentation', href: '/blog', comingSoon: true },
       { name: 'Support', href: '/contact' },
     ],
     legal: [
@@ -70,12 +70,19 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-muted-foreground hover:text-secondary transition-colors duration-300"
-                  >
-                    {link.name}
-                  </Link>
+                  <div className="relative">
+                    {link.hiring && (
+                      <span className="text-xs bg-secondary/20 text-secondary px-2 py-1 rounded-full absolute -top-3 left-0">
+                        hiring
+                      </span>
+                    )}
+                    <Link
+                      to={link.href}
+                      className="text-muted-foreground hover:text-secondary transition-colors duration-300"
+                    >
+                      {link.name}
+                    </Link>
+                  </div>
                 </li>
               ))}
             </ul>
@@ -87,12 +94,19 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-muted-foreground hover:text-secondary transition-colors duration-300"
-                  >
-                    {link.name}
-                  </Link>
+                  <div className="relative">
+                    <Link
+                      to={link.href}
+                      className="text-muted-foreground hover:text-secondary transition-colors duration-300"
+                    >
+                      {link.name}
+                      {link.comingSoon && (
+                        <span className="text-xs text-muted-foreground/60 ml-2">
+                          coming soon
+                        </span>
+                      )}
+                    </Link>
+                  </div>
                 </li>
               ))}
             </ul>

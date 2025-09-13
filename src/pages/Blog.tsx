@@ -48,7 +48,7 @@ const Blog = () => {
       date: '2023-12-28',
       readTime: '6 min read',
       category: 'Business',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=400',
+      image: '/src/assets/roi-analytics-dashboard.jpg',
       tags: ['ROI', 'Business Value', 'Metrics', 'Corporate Training']
     },
     {

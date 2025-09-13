@@ -17,7 +17,8 @@ const BlogPost = () => {
       id: 1,
       title: 'The Future of AI in Enterprise Training: Trends to Watch in 2024',
       excerpt: 'Exploring how artificial intelligence is revolutionizing corporate training programs and what organizations need to know to stay competitive.',
-      content: `
+        content: `
+        <h1>The Future of AI in Enterprise Training: Trends to Watch in 2024</h1>
         <p>Artificial Intelligence is fundamentally transforming how organizations approach employee training and development. As we move through 2024, several key trends are emerging that will shape the future of enterprise learning.</p>
 
         <h2>Personalized Learning at Scale</h2>
@@ -50,6 +51,7 @@ const BlogPost = () => {
         <p>The future of work is being shaped by AI, and the future of training must evolve accordingly. Organizations that recognize this trend and act decisively will lead their industries in the years to come.</p>
       `,
       author: 'Dr. Alexandra Chen',
+      authorImage: '/src/assets/dr-alexandra-chen.jpg',
       date: '2024-01-15',
       readTime: '8 min read',
       category: 'Industry Trends',
@@ -60,7 +62,8 @@ const BlogPost = () => {
       id: 2,
       title: 'Building AI-Ready Teams: A Comprehensive Guide for HR Leaders',
       excerpt: 'Strategic insights on how HR departments can prepare their organizations for AI adoption through targeted training and skills development.',
-      content: `
+        content: `
+        <h1>Building AI-Ready Teams: A Comprehensive Guide for HR Leaders</h1>
         <p>As artificial intelligence becomes increasingly central to business operations, HR leaders face the critical challenge of building AI-ready teams. This comprehensive guide provides strategic insights and practical frameworks for preparing your organization for the AI revolution.</p>
 
         <h2>Understanding AI Readiness</h2>
@@ -146,7 +149,8 @@ const BlogPost = () => {
       id: 3,
       title: 'Machine Learning Ethics: Navigating Bias and Fairness in AI Systems',
       excerpt: 'Understanding the critical importance of ethical considerations in AI development and how to implement responsible machine learning practices.',
-      content: `
+        content: `
+        <h1>Machine Learning Ethics: Navigating Bias and Fairness in AI Systems</h1>
         <p>As machine learning systems become more prevalent in business and society, the importance of ethical AI development cannot be overstated. This article explores the critical issues of bias and fairness in AI systems and provides practical guidance for implementing responsible machine learning practices.</p>
 
         <h2>Understanding AI Bias</h2>
@@ -260,7 +264,8 @@ const BlogPost = () => {
       id: 4,
       title: 'ROI of AI Training: Measuring Success in Corporate AI Programs',
       excerpt: 'Data-driven approaches to evaluating the return on investment for AI training initiatives and maximizing organizational impact.',
-      content: `
+        content: `
+        <h1>ROI of AI Training: Measuring Success in Corporate AI Programs</h1>
         <p>Measuring the return on investment (ROI) of AI training programs is crucial for justifying expenses, optimizing resources, and demonstrating value to stakeholders. This comprehensive guide provides data-driven approaches to evaluating AI training effectiveness and maximizing organizational impact.</p>
 
         <h2>Defining ROI in AI Training Context</h2>
@@ -406,7 +411,7 @@ const BlogPost = () => {
       date: '2023-12-28',
       readTime: '6 min read',
       category: 'Business',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=600',
+      image: '/src/assets/roi-analytics-dashboard.jpg',
       tags: ['ROI', 'Business Value', 'Metrics', 'Corporate Training']
     },
     {
@@ -978,9 +983,17 @@ const BlogPost = () => {
                 {/* Author info */}
                 <div className="mt-8 p-6 bg-muted/30 rounded-xl">
                   <div className="flex items-center space-x-4">
-                    <div className="h-12 w-12 bg-secondary/20 rounded-full flex items-center justify-center">
-                      <User className="h-6 w-6 text-secondary" />
-                    </div>
+                    {post.authorImage ? (
+                      <img 
+                        src={post.authorImage} 
+                        alt={post.author}
+                        className="h-12 w-12 rounded-full object-cover"
+                      />
+                    ) : (
+                      <div className="h-12 w-12 bg-secondary/20 rounded-full flex items-center justify-center">
+                        <User className="h-6 w-6 text-secondary" />
+                      </div>
+                    )}
                     <div>
                       <h4 className="font-semibold">{post.author}</h4>
                       <p className="text-sm text-muted-foreground">AI Training Expert</p>
