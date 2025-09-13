@@ -70,19 +70,19 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <div className="relative">
-                    {link.hiring && (
-                      <span className="text-xs bg-secondary/20 text-secondary px-2 py-1 rounded-full absolute -top-3 left-0">
-                        hiring
-                      </span>
-                    )}
-                    <Link
-                      to={link.href}
-                      className="text-muted-foreground hover:text-secondary transition-colors duration-300"
-                    >
-                      {link.name}
-                    </Link>
-                  </div>
+                    <div className="flex items-center space-x-2">
+                      <Link
+                        to={link.href}
+                        className="text-muted-foreground hover:text-secondary transition-colors duration-300"
+                      >
+                        {link.name}
+                      </Link>
+                      {link.hiring && (
+                        <span className="text-xs bg-secondary/20 text-secondary px-2 py-1 rounded-full">
+                          hiring
+                        </span>
+                      )}
+                    </div>
                 </li>
               ))}
             </ul>
