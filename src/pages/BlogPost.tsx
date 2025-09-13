@@ -11,6 +11,40 @@ const BlogPost = () => {
     setIsVisible(true);
   }, []);
 
+  const handleShare = async () => {
+    const post = blogPosts.find(p => p.id === parseInt(id || '1'));
+    if (!post) return;
+
+    const shareData = {
+      title: post.title,
+      text: post.excerpt,
+      url: window.location.href
+    };
+
+    try {
+      // Use native Web Share API if available
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        // Fallback: copy to clipboard
+        await navigator.clipboard.writeText(`${post.title}\n\n${post.excerpt}\n\n${window.location.href}`);
+        // You could also show a toast notification here
+        alert('Article link copied to clipboard!');
+      }
+    } catch (error) {
+      console.error('Error sharing:', error);
+      // Final fallback: manual copy
+      const textToCopy = `${post.title}\n\n${post.excerpt}\n\n${window.location.href}`;
+      const textArea = document.createElement('textarea');
+      textArea.value = textToCopy;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      alert('Article details copied to clipboard!');
+    }
+  };
+
   // Blog posts data (in a real app, this would come from a CMS or API)
   const blogPosts = [
     {
@@ -904,7 +938,10 @@ const BlogPost = () => {
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Back to Blog
                 </Link>
-                <button className="btn-ghost">
+                <button 
+                  onClick={handleShare}
+                  className="btn-ghost"
+                >
                   <Share2 className="mr-2 h-4 w-4" />
                   Share Article
                 </button>
