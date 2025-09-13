@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 import { useParams, Link } from 'react-router-dom';
-import { Calendar, Clock, User, ArrowLeft, Share2, BookOpen } from 'lucide-react';
+import { Calendar, Clock, User, ArrowLeft, Share2, BookOpen, Facebook, Twitter, Linkedin, MessageCircle, Send } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const BlogPost = () => {
@@ -11,38 +11,44 @@ const BlogPost = () => {
     setIsVisible(true);
   }, []);
 
-  const handleShare = async () => {
+  const [showShareMenu, setShowShareMenu] = useState(false);
+
+  const handleShare = () => {
+    setShowShareMenu(!showShareMenu);
+  };
+
+  const shareOnSocialMedia = (platform: string) => {
     const post = blogPosts.find(p => p.id === parseInt(id || '1'));
     if (!post) return;
 
-    const shareData = {
-      title: post.title,
-      text: post.excerpt,
-      url: window.location.href
-    };
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(post.title);
+    const text = encodeURIComponent(post.excerpt);
 
-    try {
-      // Use native Web Share API if available
-      if (navigator.share) {
-        await navigator.share(shareData);
-      } else {
-        // Fallback: copy to clipboard
-        await navigator.clipboard.writeText(`${post.title}\n\n${post.excerpt}\n\n${window.location.href}`);
-        // You could also show a toast notification here
-        alert('Article link copied to clipboard!');
-      }
-    } catch (error) {
-      console.error('Error sharing:', error);
-      // Final fallback: manual copy
-      const textToCopy = `${post.title}\n\n${post.excerpt}\n\n${window.location.href}`;
-      const textArea = document.createElement('textarea');
-      textArea.value = textToCopy;
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textArea);
-      alert('Article details copied to clipboard!');
+    let shareUrl = '';
+
+    switch (platform) {
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        break;
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+        break;
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+        break;
+      case 'whatsapp':
+        shareUrl = `https://wa.me/?text=${title}%20${url}`;
+        break;
+      case 'telegram':
+        shareUrl = `https://t.me/share/url?url=${url}&text=${title}`;
+        break;
+      default:
+        return;
     }
+
+    window.open(shareUrl, '_blank', 'width=600,height=400');
+    setShowShareMenu(false);
   };
 
   // Blog posts data (in a real app, this would come from a CMS or API)
@@ -938,13 +944,57 @@ const BlogPost = () => {
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Back to Blog
                 </Link>
-                <button 
-                  onClick={handleShare}
-                  className="btn-ghost"
-                >
-                  <Share2 className="mr-2 h-4 w-4" />
-                  Share Article
-                </button>
+                <div className="relative">
+                  <button 
+                    onClick={handleShare}
+                    className="btn-ghost"
+                  >
+                    <Share2 className="mr-2 h-4 w-4" />
+                    Share Article
+                  </button>
+                  
+                  {showShareMenu && (
+                    <div className="absolute top-full right-0 mt-2 w-48 bg-card rounded-lg shadow-lg border border-border z-50">
+                      <div className="p-2">
+                        <button
+                          onClick={() => shareOnSocialMedia('facebook')}
+                          className="w-full flex items-center gap-3 px-3 py-2 text-sm hover:bg-accent rounded-md transition-colors"
+                        >
+                          <Facebook className="h-4 w-4 text-blue-600" />
+                          Facebook
+                        </button>
+                        <button
+                          onClick={() => shareOnSocialMedia('twitter')}
+                          className="w-full flex items-center gap-3 px-3 py-2 text-sm hover:bg-accent rounded-md transition-colors"
+                        >
+                          <Twitter className="h-4 w-4 text-blue-400" />
+                          Twitter
+                        </button>
+                        <button
+                          onClick={() => shareOnSocialMedia('linkedin')}
+                          className="w-full flex items-center gap-3 px-3 py-2 text-sm hover:bg-accent rounded-md transition-colors"
+                        >
+                          <Linkedin className="h-4 w-4 text-blue-700" />
+                          LinkedIn
+                        </button>
+                        <button
+                          onClick={() => shareOnSocialMedia('whatsapp')}
+                          className="w-full flex items-center gap-3 px-3 py-2 text-sm hover:bg-accent rounded-md transition-colors"
+                        >
+                          <MessageCircle className="h-4 w-4 text-green-500" />
+                          WhatsApp
+                        </button>
+                        <button
+                          onClick={() => shareOnSocialMedia('telegram')}
+                          className="w-full flex items-center gap-3 px-3 py-2 text-sm hover:bg-accent rounded-md transition-colors"
+                        >
+                          <Send className="h-4 w-4 text-blue-500" />
+                          Telegram
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
