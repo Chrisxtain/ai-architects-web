@@ -865,7 +865,7 @@ const BlogPost = () => {
       date: '2023-12-15',
       readTime: '11 min read',
       category: 'Case Studies',
-      image: 'https://images.unsplash.com/photo-1565514928304-5f4f05ae9444?auto=format&fit=crop&w=1200&h=600',
+      image: 'https://plus.unsplash.com/premium_photo-1663011058215-6fcf33ca8378?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDEzfHx0aGluZ3N8ZW58MHx8MHx8fDA%3D',
       tags: ['Manufacturing', 'Automation', 'Case Studies', 'Best Practices']
     }
   ];
