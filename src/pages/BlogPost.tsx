@@ -105,73 +105,82 @@ const BlogPost = () => {
         content: `
         <h1>Building AI-Ready Teams: A Comprehensive Guide for HR Leaders</h1>
         <p>As artificial intelligence becomes increasingly central to business operations, HR leaders face the critical challenge of building AI-ready teams. This comprehensive guide provides strategic insights and practical frameworks for preparing your organization for the AI revolution.</p>
+        <br>
 
         <h2>Understanding AI Readiness</h2>
         <p>AI readiness goes beyond technical skills. It encompasses a mindset shift, cultural adaptation, and a new approach to problem-solving. Organizations need employees who can work alongside AI systems, interpret AI-generated insights, and make decisions in an AI-augmented environment.</p>
+        <br>
 
         <h2>The AI Skills Framework</h2>
         <p>Successful AI adoption requires a multi-layered approach to skill development:</p>
-
+        
+        <br>
         <h3>Technical Foundation</h3>
         <ul>
-          <li>Data literacy and interpretation</li>
-          <li>Basic understanding of machine learning concepts</li>
-          <li>Familiarity with AI tools and platforms</li>
-          <li>Statistical thinking and analytical reasoning</li>
+          <li>1. Data literacy and interpretation</li>
+          <li>2. Basic understanding of machine learning concepts</li>
+          <li>3. Familiarity with AI tools and platforms</li>
+          <li>4. Statistical thinking and analytical reasoning</li>
         </ul>
+        <br>
 
         <h3>Soft Skills Enhancement</h3>
         <ul>
-          <li>Critical thinking and problem-solving</li>
-          <li>Adaptability and continuous learning</li>
-          <li>Collaboration with AI systems</li>
-          <li>Ethical reasoning and decision-making</li>
+          <li>1. Critical thinking and problem-solving</li>
+          <li>2. Adaptability and continuous learning</li>
+          <li>3. Collaboration with AI systems</li>
+          <li>4. Ethical reasoning and decision-making</li>
         </ul>
+        <br>
 
         <h2>Assessment and Gap Analysis</h2>
         <p>Before implementing training programs, conduct a comprehensive skills assessment to identify current capabilities and future needs. This involves:</p>
         <ul>
-          <li>Evaluating existing technical competencies</li>
-          <li>Assessing digital literacy levels</li>
-          <li>Identifying role-specific AI requirements</li>
-          <li>Understanding employee attitudes toward AI</li>
+          <li>1. Evaluating existing technical competencies</li>
+          <li>2. Assessing digital literacy levels</li>
+          <li>3. Identifying role-specific AI requirements</li>
+          <li>4. Understanding employee attitudes toward AI</li>
         </ul>
+        <br>
 
         <h2>Creating Learning Pathways</h2>
         <p>Design personalized learning journeys that account for different roles, experience levels, and learning preferences. Consider:</p>
         <ul>
-          <li>Entry-level AI awareness programs</li>
-          <li>Role-specific AI applications training</li>
-          <li>Advanced analytics and machine learning courses</li>
-          <li>Leadership programs for AI strategy and governance</li>
+          <li>1. Entry-level AI awareness programs</li>
+          <li>2. Role-specific AI applications training</li>
+          <li>3. Advanced analytics and machine learning courses</li>
+          <li>4. Leadership programs for AI strategy and governance</li>
         </ul>
+        <br>
 
         <h2>Building an AI-First Culture</h2>
         <p>Technical training alone isn't sufficient. Organizations must cultivate a culture that embraces AI innovation while maintaining human-centered values. This includes:</p>
         <ul>
-          <li>Transparent communication about AI initiatives</li>
-          <li>Opportunities for hands-on experimentation</li>
-          <li>Recognition of AI-driven achievements</li>
-          <li>Continuous feedback and improvement processes</li>
+          <li>1. Transparent communication about AI initiatives</li>
+          <li>2. Opportunities for hands-on experimentation</li>
+          <li>3. Recognition of AI-driven achievements</li>
+          <li>4. Continuous feedback and improvement processes</li>
         </ul>
+        <br>
 
         <h2>Measuring Success</h2>
         <p>Establish clear metrics to track the effectiveness of your AI readiness initiatives:</p>
         <ul>
-          <li>Skill acquisition rates and competency levels</li>
-          <li>Employee engagement with AI tools</li>
-          <li>Innovation metrics and process improvements</li>
-          <li>Business outcomes and competitive advantages</li>
+          <li>1. Skill acquisition rates and competency levels</li>
+          <li>2. Employee engagement with AI tools</li>
+          <li>3. Innovation metrics and process improvements</li>
+          <li>4. Business outcomes and competitive advantages</li>
         </ul>
-
+        <br>
         <h2>Overcoming Common Challenges</h2>
         <p>Many organizations encounter resistance to AI adoption. Address these challenges through:</p>
         <ul>
-          <li>Clear communication about AI's role in enhancing (not replacing) human work</li>
-          <li>Gradual introduction of AI tools and concepts</li>
-          <li>Success stories and case studies from early adopters</li>
-          <li>Ongoing support and mentorship programs</li>
+          <li>1. Clear communication about AI's role in enhancing (not replacing) human work</li>
+          <li>2. Gradual introduction of AI tools and concepts</li>
+          <li>3. Success stories and case studies from early adopters</li>
+          <li>4. Ongoing support and mentorship programs</li>
         </ul>
+        <br>
 
         <h2>The Path Forward</h2>
         <p>Building AI-ready teams is an ongoing journey, not a destination. Organizations that invest in comprehensive AI training today will have teams that are not only prepared for current AI applications but also adaptable to future technological advances.</p>
