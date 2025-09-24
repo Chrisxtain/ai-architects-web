@@ -1,5 +1,6 @@
 import Layout from '../components/Layout';
 import { Users, Target, Award, Globe, Lightbulb, Rocket } from 'lucide-react';
+import TextType from '../components/TextType';
 
 const About = () => {
   const values = [
@@ -65,9 +66,9 @@ const About = () => {
               <span className="text-gradient">AI Education</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              At NeuroTrain AI, we're on a mission to democratize artificial intelligence education, 
-              empowering professionals and organizations to harness the transformative power of AI 
-              through world-class training programs.
+              <p>
+              <TextType text = "At NeuroTrain AI, we're on a mission to democratize artificial intelligence education,empowering professionals and organizations to harness the transformative power of AI through world-class training programs." />
+              </p>
             </p>
           </div>
         </div>

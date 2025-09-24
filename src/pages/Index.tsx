@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Brain, Zap, Target, Users, Star, CheckCircle, Play } from 'lucide-react';
 import Layout from '../components/Layout';
 import heroImage from '../assets/hero-ai-training.jpg';
+import TextType from '../components/TextType';
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -96,7 +97,9 @@ const Index = () => {
                   className="text-xl text-muted-foreground max-w-lg leading-relaxed animate-fade-in hover:text-foreground transition-colors duration-300"
                   style={{ animationDelay: '0.9s' }}
                 >
-                  Empower your organization with cutting-edge AI training programs designed for enterprise teams and individual professionals seeking to lead in the AI revolution.
+                  <p> 
+                 <TextType text = "Empower your organization with cutting-edge AI training programs designed for enterprise teams and individual professionals seeking to lead in the AI revolution." />
+                  </p>
                 </p>
               </div>
               
@@ -151,7 +154,9 @@ const Index = () => {
               Why Choose <span className="text-gradient">NeuroTrain AI</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our comprehensive training platform combines cutting-edge technology with proven pedagogical methods to deliver unparalleled learning experiences.
+              <p>
+              <TextType text = "Our comprehensive training platform combines cutting-edge technology with proven pedagogical methods to deliver unparalleled learning experiences." />
+              </p>
             </p>
           </div>
 
