@@ -489,7 +489,7 @@ const Careers = () => {
               {
                 step: '02',
                 title: 'Verification',
-                description: 'A conversation with our hiring team to discuss your experience and our opportunities.'
+                description: 'We verify your identity as our positions are currently limited to certain locations.'
               },
               {
                 step: '03',
@@ -498,8 +498,8 @@ const Careers = () => {
               },
               {
                 step: '04',
-                title: 'Start Working on Projects',
-                description: 'Meet with team members and leadership to ensure mutual fit and discuss next steps.'
+                title: 'Work on Projects & Earn',
+                description: 'Gain access to our platform and begin contributing to real projects under mentorship.'
               }
             ].map((step, index) => (
               <div key={index} className="text-center">
