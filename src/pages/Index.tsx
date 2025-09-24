@@ -94,7 +94,7 @@ const Index = () => {
                 </h1>
                 <p 
                   className="text-xl text-muted-foreground max-w-lg leading-relaxed animate-fade-in hover:text-foreground transition-colors duration-300"
-                  style={{ animationDelay: '0.6s' }}
+                  style={{ animationDelay: '0.9s' }}
                 >
                   Empower your organization with cutting-edge AI training programs designed for enterprise teams and individual professionals seeking to lead in the AI revolution.
                 </p>
