@@ -1,8 +1,107 @@
 import Layout from '../components/Layout';
 import { Link } from 'react-router-dom';
 import { MapPin, Clock, DollarSign, Users, Rocket, Heart, Award, Globe } from 'lucide-react';
+import FileUpload from '../components/FileUpload';
+import { useState } from 'react';
+import { useToast } from '../components/ui/use-toast';
 
 const Careers = () => {
+  const [showResumeUpload, setShowResumeUpload] = useState(false);
+  const { toast } = useToast();
+
+  const freelancePositions = [
+    {
+      id: 'biology',
+      title: 'Biology Expert',
+      department: 'Freelance',
+      location: 'Remote',
+      type: 'Freelance',
+      salary: '$25-$60/hr',
+      description: 'Create educational content and provide expertise in biology topics for our AI training materials.',
+      requirements: [
+        'Advanced degree in Biology or related field',
+        'Experience in content creation or tutoring',
+        'Strong communication skills',
+        'Ability to work independently'
+      ]
+    },
+    {
+      id: 'english',
+      title: 'English Expert',
+      department: 'Freelance',
+      location: 'Remote',
+      type: 'Freelance',
+      salary: '$25-$60/hr',
+      description: 'Develop language learning materials and provide English language expertise for our training programs.',
+      requirements: [
+        'Native or near-native English proficiency',
+        'Teaching or tutoring experience',
+        'Strong writing and editing skills',
+        'Experience with educational content development'
+      ]
+    },
+    {
+      id: 'mathematics',
+      title: 'Mathematics Expert',
+      department: 'Freelance',
+      location: 'Remote',
+      type: 'Freelance',
+      salary: '$25-$60/hr',
+      description: 'Create mathematical content and provide expertise for AI training in mathematics and related fields.',
+      requirements: [
+        'Advanced degree in Mathematics or related field',
+        'Experience in teaching or tutoring mathematics',
+        'Ability to explain complex concepts clearly',
+        'Strong analytical and problem-solving skills'
+      ]
+    },
+    {
+      id: 'chemistry',
+      title: 'Chemistry Expert',
+      department: 'Freelance',
+      location: 'Remote',
+      type: 'Freelance',
+      salary: '$25-$60/hr',
+      description: 'Develop chemistry educational content and provide subject matter expertise for our training materials.',
+      requirements: [
+        'Advanced degree in Chemistry or related field',
+        'Laboratory and research experience',
+        'Content creation or teaching experience',
+        'Strong attention to detail'
+      ]
+    },
+    {
+      id: 'physics',
+      title: 'Physics Expert',
+      department: 'Freelance',
+      location: 'Remote',
+      type: 'Freelance',
+      salary: '$25-$60/hr',
+      description: 'Create physics educational content and provide expertise in physics concepts for AI training.',
+      requirements: [
+        'Advanced degree in Physics or related field',
+        'Research or industry experience',
+        'Ability to simplify complex physics concepts',
+        'Strong mathematical background'
+      ]
+    },
+    {
+      id: 'graphics-ux',
+      title: 'Graphics and UX/UI Expert',
+      department: 'Freelance',
+      location: 'Remote',
+      type: 'Freelance',
+      salary: '$25-$60/hr',
+      description: 'Design user interfaces and create visual content for our AI training platform and materials.',
+      requirements: [
+        'Proven experience in UX/UI design',
+        'Proficiency in design tools (Figma, Adobe Creative Suite)',
+        'Strong portfolio of design work',
+        'Understanding of user-centered design principles'
+      ]
+    }
+  ];
+
   const jobOpenings = [
     {
       id: 1,
@@ -215,8 +314,60 @@ const Careers = () => {
             </p>
           </div>
 
-          <div className="space-y-6">
-            {jobOpenings.map((job) => (
+          {/* Freelance Positions */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-semibold mb-8 text-gradient">Freelance Opportunities</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {freelancePositions.map((job) => (
+                <div key={job.id} className="ai-card group">
+                  <div className="relative z-10">
+                    <div className="flex flex-wrap items-center gap-4 mb-4">
+                      <h4 className="text-lg font-semibold text-gradient">
+                        {job.title}
+                      </h4>
+                      <span className="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm">
+                        {job.department}
+                      </span>
+                    </div>
+
+                    <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
+                      {job.description}
+                    </p>
+
+                    <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-4">
+                      <div className="flex items-center space-x-2">
+                        <MapPin className="h-4 w-4 text-secondary" />
+                        <span>{job.location}</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Clock className="h-4 w-4 text-secondary" />
+                        <span>{job.type}</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <DollarSign className="h-4 w-4 text-secondary" />
+                        <span>{job.salary}</span>
+                      </div>
+                    </div>
+
+                    <div className="text-right">
+                      <Link 
+                        to="/contact"
+                        className="btn-ghost text-sm px-4 py-2"
+                      >
+                        Apply Now
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Full-time Positions */}
+          <div>
+            <h3 className="text-2xl font-semibold mb-8 text-gradient">Full-time Positions</h3>
+            <div className="space-y-6">
+              {jobOpenings.map((job) => (
               <div key={job.id} className="ai-card group">
                 <div className="relative z-10">
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
@@ -276,6 +427,7 @@ const Careers = () => {
               </div>
             ))}
           </div>
+          </div>
 
           {/* No Perfect Match CTA */}
           <div className="mt-16 text-center">
@@ -289,9 +441,25 @@ const Careers = () => {
                   We're always looking for talented individuals who share our passion for AI education. 
                   Send us your resume and tell us how you'd like to contribute to our mission.
                 </p>
-                <Link to="/contact" className="btn-ghost">
+                <button 
+                  onClick={() => setShowResumeUpload(!showResumeUpload)}
+                  className="btn-ghost"
+                >
                   Send Us Your Resume
-                </Link>
+                </button>
+                
+                {showResumeUpload && (
+                  <div className="mt-6">
+                    <FileUpload 
+                      onFileSelect={(file) => {
+                        console.log('Resume uploaded:', file.name);
+                        // Here you would typically send the file to your backend
+                      }}
+                      accept=".pdf"
+                      maxSize={10}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -320,7 +488,7 @@ const Careers = () => {
               },
               {
                 step: '02',
-                title: 'Initial Interview',
+                title: 'Verification',
                 description: 'A conversation with our hiring team to discuss your experience and our opportunities.'
               },
               {
@@ -330,7 +498,7 @@ const Careers = () => {
               },
               {
                 step: '04',
-                title: 'Final Interview',
+                title: 'Start Working on Projects',
                 description: 'Meet with team members and leadership to ensure mutual fit and discuss next steps.'
               }
             ].map((step, index) => (
