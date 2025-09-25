@@ -351,7 +351,7 @@ const Careers = () => {
 
                     <div className="text-right">
                       <Link 
-                        to="/contact"
+                        to="https://docs.google.com/forms/d/e/1FAIpQLSenDle00IjQ2wqCPL5t4DFa9m5jVU5Z-ngB36QuY6PWhcpMag/viewform"
                         className="btn-ghost text-sm px-4 py-2"
                       >
                         Apply Now
