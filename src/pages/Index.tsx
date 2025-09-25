@@ -13,8 +13,8 @@ const Index = () => {
   }, []);
 
   const stats = [
-    { number: '10K+', label: 'Professionals Trained' },
-    { number: '500+', label: 'Enterprise Clients' },
+    { number: '3K+', label: 'Professionals Trained' },
+    { number: '100+', label: 'Enterprise Clients' },
     { number: '95%', label: 'Success Rate' },
     { number: '24/7', label: 'Support Available' },
   ];
