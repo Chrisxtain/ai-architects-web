@@ -403,7 +403,7 @@ const Careers = () => {
 
                     <div className="lg:text-right">
                       <Link 
-                        to="/contact"
+                        to="https://docs.google.com/forms/d/e/1FAIpQLSdP186fMdE4fzNknzLuqgwjy6k_H_kZ3Uyg_geYkenRY8fCkQ/viewform?usp=dialog"
                         className="btn-hero group"
                       >
                         Apply Now
