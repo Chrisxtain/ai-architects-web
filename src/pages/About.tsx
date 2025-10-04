@@ -30,20 +30,20 @@ const About = () => {
     {
       name: 'Dr. Alexandra Chen',
       role: 'CEO & Founder',
-      bio: 'Former Google AI Research Director with 15+ years in machine learning and enterprise AI implementation.',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b077?auto=format&fit=crop&w=400&h=400',
+      bio: 'AI Research Director with 15+ years in machine learning and enterprise AI implementation.',
+      image: 'https://images.unsplash.com/photo-1733325154702-5d5e5d53b6ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDV8dG93SlpGc2twR2d8fGVufDB8fHx8fA%3D%3D',
     },
     {
       name: 'Marcus Rodriguez',
       role: 'CTO',
-      bio: 'Ex-OpenAI engineer who led development of enterprise training platforms serving Fortune 500 companies.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400',
+      bio: 'Expert engineer who led development of enterprise training platforms serving Fortune 500 companies.',
+      image: 'https://images.unsplash.com/photo-1758600587378-b540175903e4?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
       name: 'Dr. Sarah Kim',
       role: 'Head of Curriculum',
       bio: 'MIT AI Lab alumna specializing in adaptive learning systems and pedagogical AI applications.',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&h=400',
+      image: 'https://plus.unsplash.com/premium_photo-1757612173670-9b90c959e598?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE0OHx0b3dKWkZza3BHZ3x8ZW58MHx8fHx8',
     },
   ];
 
