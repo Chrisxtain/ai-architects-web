@@ -49,9 +49,9 @@ const About = () => {
 
   const stats = [
     { number: '2019', label: 'Founded' },
-    { number: '10K+', label: 'Professionals Trained' },
-    { number: '500+', label: 'Enterprise Clients' },
-    { number: '50+', label: 'Countries Served' },
+    { number: '3K+', label: 'Professionals Trained' },
+    { number: '100+', label: 'Enterprise Clients' },
+    { number: '30+', label: 'Countries Served' },
   ];
 
   return (
