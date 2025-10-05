@@ -13,8 +13,8 @@ const Footer = () => {
     ],
     resources: [
       { name: 'Blog', href: '/blog' },
-      { name: 'Case Studies', href: '/blog', comingSoon: true },
-      { name: 'Documentation', href: '/blog', comingSoon: true },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Documentation', href: '/documentation' },
       { name: 'Support', href: '/contact' },
     ],
     legal: [
@@ -94,19 +94,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  <div className="relative">
-                    <Link
-                      to={link.href}
-                      className="text-muted-foreground hover:text-secondary transition-colors duration-300"
-                    >
-                      {link.name}
-                      {link.comingSoon && (
-                        <span className="text-xs text-muted-foreground/60 ml-2">
-                          coming soon
-                        </span>
-                      )}
-                    </Link>
-                  </div>
+                  <Link
+                    to={link.href}
+                    className="text-muted-foreground hover:text-secondary transition-colors duration-300"
+                  >
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
