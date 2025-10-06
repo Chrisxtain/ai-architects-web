@@ -44,13 +44,13 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'hello@neurotrain.ai',
+      details: 'Hello@neurotrainai.org',
       description: 'Send us an email and we\'ll respond within 24 hours'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+1 (555) 123-4567',
+      details: '+1 (415) 834-5065',
       description: 'Speak with our team Monday-Friday, 9AM-6PM PST'
     },
     {
