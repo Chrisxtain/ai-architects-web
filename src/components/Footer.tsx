@@ -26,7 +26,7 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: Linkedin, href: '#' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/neurotrain/' },
     { name: 'Twitter', icon: Twitter, href: '#' },
     { name: 'GitHub', icon: Github, href: '#' },
   ];
